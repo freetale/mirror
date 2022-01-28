@@ -1,6 +1,6 @@
 {
     "name": "Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Mirror.Editor",
     "references": [
         "GUID:38822f7021e27f149a4cd8b59146c967"
     ],
