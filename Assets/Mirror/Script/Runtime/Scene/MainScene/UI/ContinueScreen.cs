@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Mirror.Runtime.UI.MainScene
+namespace Mirror.Runtime.Scene.MainScene
 {
-    public class ContinueScreen : MonoBehaviour
+    public class ContinueScreen : UIScreenBase
     {
 
         [Required] public Button ContinueButton;

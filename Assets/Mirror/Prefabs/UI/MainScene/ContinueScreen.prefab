@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8639737562763787729}
   - component: {fileID: 38669773}
   - component: {fileID: 6509299647601575714}
+  - component: {fileID: 5790757772444618449}
   m_Layer: 5
   m_Name: ContinueScreen
   m_TagString: Untagged
@@ -73,6 +74,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ContinueButton: {fileID: 4149131588648669596}
+--- !u!114 &5790757772444618449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8639737562763787734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1001 &7215742787700779320
 PrefabInstance:
   m_ObjectHideFlags: 0
