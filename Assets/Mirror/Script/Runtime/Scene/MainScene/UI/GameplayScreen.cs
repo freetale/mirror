@@ -7,6 +7,8 @@ namespace Mirror.Runtime.Scene.MainScene
 {
     public class GameplayScreen : UIScreenBase
     {
+        public HealthIconGroup HealthIconGroup;
+
         public void Initialize()
         {
             
