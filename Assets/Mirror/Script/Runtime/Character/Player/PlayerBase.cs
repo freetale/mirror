@@ -51,6 +51,12 @@ namespace Mirror.Runtime
             }
         }
 
+        public Vector3 Position
+        {
+            get => transform.position;
+            set => transform.position = value;
+        }
+
         public InputState InputState { get; set; }
 
 

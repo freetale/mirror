@@ -138,8 +138,8 @@ MonoBehaviour:
   SlideCollider2D: {fileID: 1742028883889708823}
   NormalCapsule: {fileID: 3721208197129257331}
   SlideCapsule: {fileID: 6893462695848862195}
-  JumpPower: 5
-  GroundCheckDistance: 0.01
+  JumpPower: 7
+  GroundCheckDistance: 0.02
   _isFlip: 0
 --- !u!70 &4768707748608256240
 CapsuleCollider2D:
