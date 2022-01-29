@@ -9,7 +9,7 @@ using UnityEditor;
 
 namespace Mirror.Runtime
 {
-    public class PlayerBase : MonoBehaviour
+    public class PlayerBase : AbstractFlipable
     {
         [Header("Component")]
         [Required]  public Rigidbody2D Rigidbody2D;
@@ -26,16 +26,13 @@ namespace Mirror.Runtime
 
         public event Action<int> OnDamage;
 
-        [SerializeField]
-        private bool _isFlip;
-        public bool IsFlip
+        public override bool IsFlip
         {
             get => _isFlip;
             set
             {
                 _isFlip = value;
-                Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
-                transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
+                UpdateFlip();
             }
         }
 
@@ -99,6 +96,12 @@ namespace Mirror.Runtime
             int hitCount =  NormalCollider2D.Cast(direction, filter, raycastHit2Ds, GroundCheckDistance);
             return hitCount > 0;
         }
+        
+        private void UpdateFlip()
+        {
+            Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
+            transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
+        }
 
         private void TakeDamage( int damage )
         {
@@ -121,8 +124,7 @@ namespace Mirror.Runtime
         {
             if (Rigidbody2D)
             {
-                Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
-                transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
+                UpdateFlip();
                 EditorUtility.SetDirty(Rigidbody2D);
                 EditorUtility.SetDirty(transform);
             }

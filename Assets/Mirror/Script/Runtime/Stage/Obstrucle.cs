@@ -1,11 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Mirror.Runtime
 {
-    public class Obstrucle : MonoBehaviour
+    public class Obstrucle : AbstractFlipable
     {
+
+        // ########################################
+        //  CLASS MEMBER
+        // ########################################
 
         [Header("Component")]
         public SkyScroller GroundScroll;
@@ -15,23 +22,23 @@ namespace Mirror.Runtime
         public float LeftBound;
         public int Damage = 1;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+        // ########################################
+        // CLASS FUNCTION
+        // ########################################
 
-            // TODO: spawner should assign speed 
-            ScrollSpeed = GroundScroll.ScrollSpeed;
-        
+        public override bool IsFlip
+        {
+            get => _isFlip;
+            set
+            {
+                _isFlip = value;
+                UpdateFlip();
+            }
         }
 
-
-
-        // Update is called once per frame
-        void Update()
+        private void UpdateFlip()
         {
-
-            UpdateObject( Time.deltaTime );
-        
+            transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
         }
 
         void UpdateObject( float deltaTime )
@@ -48,6 +55,27 @@ namespace Mirror.Runtime
 
         }
 
+        // ########################################
+        // CLASS BUILDIN FUNCTION
+        // ########################################
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+            // TODO: spawner should assign speed 
+            ScrollSpeed = GroundScroll.ScrollSpeed;
+        
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+            UpdateObject( Time.deltaTime );
+        
+        }
+
 #if UNITY_EDITOR
         /// <summary>
         /// Reset is called when the user hits the Reset button in the Inspector's
@@ -56,6 +84,12 @@ namespace Mirror.Runtime
         void Reset()
         {
             GroundScroll = GetComponent<SkyScroller>();
+        }
+
+        private void OnValidate()
+        {
+            UpdateFlip();
+            EditorUtility.SetDirty(transform);
         }
 #endif
 
