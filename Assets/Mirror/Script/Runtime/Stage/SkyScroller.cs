@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +7,21 @@ namespace Mirror.Runtime
 {
     public class SkyScroller : MonoBehaviour
     {
-        // ############## PUBLIC MEMBER ######################
-        public BoxCollider2D collider;
-        public float scrollSpeed;
+        [Header("Component")]
+        [Required]
+        public BoxCollider2D Collider;
+
+        [Header("Config")]
+        public float ScrollSpeed;
         public bool isEableCollider;
 
-        // ############## PRIVATE MEMBER######################
-
         private float width;
-
-        // ############## 
 
         // Start is called before the first frame update
         void Start()
         {
-            width = collider.size.x;
-            collider.enabled = isEableCollider;
+            width = Collider.size.x;
+            Collider.enabled = isEableCollider;
 
         }
 
@@ -30,25 +30,39 @@ namespace Mirror.Runtime
         {
             UpdateObject( Time.deltaTime );
         }
-
+        
         public void UpdateObject( float deltaTime)
         {   
             // move object
-            transform.Translate( - scrollSpeed * deltaTime, 0, 0) ;
+            slide( - ScrollSpeed * deltaTime ) ;
 
             // reset position if out of screen
             if ( transform.position.x < -width )
             {
-                Vector3 resetPostion = new Vector3( width * 2f, 0, 0 );
-                transform.position = transform.position + resetPostion;
+                resetPosition( width * 2f, 0 );
             }
-
         }
 
+        private void slide( float distance )
+        {
+            transform.Translate( distance, 0, 0) ;
+        }
+
+        private void resetPosition( float positionX, float positionY )
+        {
+            Vector3 resetPostion = new Vector3( positionX, positionY, 0 );
+            transform.position = transform.position + resetPostion;
+        }
+
+#if UNITY_EDITOR
         // Get component when reset in inspector
         void Reset()
         {
-            collider = GetComponent<BoxCollider2D>();
+            Collider = GetComponent<BoxCollider2D>();
         }
+#endif
+
+        
+       
     }
 }
