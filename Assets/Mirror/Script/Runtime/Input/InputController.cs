@@ -7,25 +7,12 @@ namespace Mirror.Runtime
 {
     public class InputController : MonoBehaviour
     {
-        public event Action OnJump;
-        public event Action OnSlide;
+        public InputState InputState { get; set; }
 
-        
-        private void Update()
+        public void UpdateObject(float deltaTime)
         {
-            Update(Time.deltaTime);
-        }
-
-        public void Update(float deltaTime)
-        {
-            if (Input.GetButtonDown("Jump"))
-            {
-                OnJump?.Invoke();
-            }
-            if (Input.GetButtonDown("Slide"))
-            {
-                OnSlide?.Invoke();
-            }
+            InputState.IsJump = Input.GetButton("Jump");
+            InputState.IsSlide = Input.GetButton("Slide");
         }
     }
 }
