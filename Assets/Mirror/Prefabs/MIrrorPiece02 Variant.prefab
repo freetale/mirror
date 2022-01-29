@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1217788111, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
+      propertyPath: ScrollSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1217788111, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
       propertyPath: scrollSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -17,12 +21,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1833193150986830757, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
       propertyPath: m_Name
-      value: MIrrorPiece02
+      value: MIrrorPiece02 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2088712578970239959, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: aa5b19de29139a94295ce0b4b86375d6, type: 3}
+    - target: {fileID: 2088712578970239959, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2088712578970239959, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 2041279975
+      objectReference: {fileID: 0}
     - target: {fileID: 2681683961150083579, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
       propertyPath: m_Size.y
       value: 0.20094228

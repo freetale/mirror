@@ -23,6 +23,9 @@ namespace Mirror.Runtime
         [Header("Config")]
         public float JumpPower = 1f;
         public float GroundCheckDistance = 0.2f;
+        public float GravityScale = 1;
+        public float MaxHealth = 2;
+        private float CurrentHealth = 2;
 
         [SerializeField]
         private bool _isFlip;
@@ -32,7 +35,7 @@ namespace Mirror.Runtime
             set
             {
                 _isFlip = value;
-                Rigidbody2D.gravityScale = _isFlip ? -1 : 1;
+                Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
                 transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
             }
         }
@@ -89,17 +92,48 @@ namespace Mirror.Runtime
             return hitCount > 0;
         }
 
+        private void TakeDamage( int damage )
+        {
+            CurrentHealth -= damage;
+            if ( CurrentHealth <= 0 )
+                KillPlayer();
+
+            Debug.Log( CurrentHealth );
+        }
+
+        private void KillPlayer()
+        {
+            // TODO: trigger death scene
+            Destroy( gameObject );
+        }
+
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            var collidingObjectLayer = other.gameObject.layer;
+
+            Debug.Log( "layer " + collidingObjectLayer + " == " + LayerMask.NameToLayer( "DamageObstrucle" ) );
+
+            if ( collidingObjectLayer == LayerMask.NameToLayer("DamageObstrucle") )
+                TakeDamage( 1 );
+        }
+
 #if UNITY_EDITOR
 
         private void OnValidate()
         {
             if (Rigidbody2D)
             {
-                Rigidbody2D.gravityScale = _isFlip ? -1 : 1;
+                Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
                 transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
                 EditorUtility.SetDirty(Rigidbody2D);
                 EditorUtility.SetDirty(transform);
             }
+
+            if ( CurrentHealth > MaxHealth )
+            {
+                CurrentHealth = MaxHealth;
+            }
+
         }
 
         private void Reset()
