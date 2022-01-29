@@ -8,8 +8,8 @@ namespace Mirror.Runtime.Scene.MainScene
     public class MainScene : MonoBehaviour
     {
         [Required] public InputController InputController;
-        [Required] public PlayerBase MeleePlayer;
-        [Required] public PlayerBase RangePlayer;
+        [Required] public MeleePlayer MeleePlayer;
+        [Required] public RangePlayer RangePlayer;
         [Required] public MainSceneUI MainSceneUI;
         [Required] public SFXPool SFXPool;
 
@@ -31,8 +31,8 @@ namespace Mirror.Runtime.Scene.MainScene
             var state = new InputState();
             InputState = state;
             InputController.InputState = state;
-            MeleePlayer.InputState = state;
-            RangePlayer.InputState = state;
+            MeleePlayer.PlayerBase.InputState = state;
+            RangePlayer.PlayerBase.InputState = state;
         }
 
         private void InitializeState()
@@ -64,21 +64,21 @@ namespace Mirror.Runtime.Scene.MainScene
 
         private void FixedUpdate()
         {
-            MeleePlayer.FixedUpdateObject(Time.fixedDeltaTime);
-            RangePlayer.FixedUpdateObject(Time.fixedDeltaTime);
+            MeleePlayer.PlayerBase.FixedUpdateObject(Time.fixedDeltaTime);
+            RangePlayer.PlayerBase.FixedUpdateObject(Time.fixedDeltaTime);
         }
 
         private void SwapPlayer()
         {
-            var meleeFlip = MeleePlayer.IsFlip;
-            var meleePosition = MeleePlayer.Position;
-            var rangePosition = RangePlayer.Position;
-            MeleePlayer.Position = rangePosition;
-            RangePlayer.Position = meleePosition;
-            MeleePlayer.IsFlip = !meleeFlip;
-            RangePlayer.IsFlip = meleeFlip;
-            MeleePlayer.Velocity *= -1;
-            RangePlayer.Velocity *= -1;
+            var meleeFlip = MeleePlayer.PlayerBase.IsFlip;
+            var meleePosition = MeleePlayer.PlayerBase.Position;
+            var rangePosition = RangePlayer.PlayerBase.Position;
+            MeleePlayer.PlayerBase.Position = rangePosition;
+            RangePlayer.PlayerBase.Position = meleePosition;
+            MeleePlayer.PlayerBase.IsFlip = !meleeFlip;
+            RangePlayer.PlayerBase.IsFlip = meleeFlip;
+            MeleePlayer.PlayerBase.Velocity *= -1;
+            RangePlayer.PlayerBase.Velocity *= -1;
         }
 
         public void NextState(IState state)

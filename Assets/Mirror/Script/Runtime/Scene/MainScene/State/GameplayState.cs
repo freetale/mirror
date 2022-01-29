@@ -16,15 +16,15 @@ namespace Mirror.Runtime.Scene.MainScene
         public IState FailState { get; set; }
         public IState ContinueState { get; set; }
 
-        public int InitialHealth { get; set; } = 3;
+        public int InitialHealth { get; set; } = 2;
         public int CurrentHealth { get; set; }
 
         public HealthIconGroup HealthIconGroup => MainScene.MainSceneUI.GameplayScreen.HealthIconGroup;
 
         public void OnEnterState()
         {
-            MainScene.MeleePlayer.OnDamage += Player_OnDamage;
-            MainScene.RangePlayer.OnDamage += Player_OnDamage;
+            MainScene.MeleePlayer.PlayerBase.OnDamage += Player_OnDamage;
+            MainScene.RangePlayer.PlayerBase.OnDamage += Player_OnDamage;
 
             CurrentHealth = InitialHealth;
             HealthIconGroup.CurrentHealth = CurrentHealth;
@@ -42,7 +42,8 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnExitState()
         {
-
+            MainScene.MeleePlayer.PlayerBase.OnDamage -= Player_OnDamage;
+            MainScene.RangePlayer.PlayerBase.OnDamage -= Player_OnDamage;
         }
 
         private void Player_OnDamage(int damage)

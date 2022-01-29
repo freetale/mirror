@@ -12,14 +12,12 @@ namespace Mirror.Runtime
     public class PlayerBase : MonoBehaviour
     {
         [Header("Component")]
-        [Required]
-        public Rigidbody2D Rigidbody2D;
-        public CapsuleCollider2D NormalCollider2D;
-        public CapsuleCollider2D SlideCollider2D;
+        [Required]  public Rigidbody2D Rigidbody2D;
+        [Required] public CapsuleCollider2D NormalCollider2D;
+        [Required] public CapsuleCollider2D SlideCollider2D;
 
         public GameObject NormalCapsule; //mock
         public GameObject SlideCapsule; //mock
-
 
         [Header("Config")]
         public float JumpPower = 1f;
@@ -69,12 +67,10 @@ namespace Mirror.Runtime
 
         public InputState InputState { get; set; }
 
-
         /// <summary>
         /// internal use for <see cref="IsGrounded"/>
         /// </summary>
         private RaycastHit2D[] raycastHit2Ds = new RaycastHit2D[1];
-
         public void FixedUpdateObject(float fixedDeltaTime)
         {
             if (InputState.IsJump && IsGrounded())
