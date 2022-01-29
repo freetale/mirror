@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: IsFlip
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 225333353079435705, guid: 539056cadd9bab346a34a70e6a8d9185, type: 3}
+      propertyPath: _isFlip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5191904906400108105, guid: 539056cadd9bab346a34a70e6a8d9185, type: 3}
       propertyPath: m_Name
       value: RangePlayer
@@ -574,6 +578,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 225333353079435705, guid: 539056cadd9bab346a34a70e6a8d9185, type: 3}
       propertyPath: IsFlip
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 225333353079435705, guid: 539056cadd9bab346a34a70e6a8d9185, type: 3}
+      propertyPath: _isFlip
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5191904906400108105, guid: 539056cadd9bab346a34a70e6a8d9185, type: 3}

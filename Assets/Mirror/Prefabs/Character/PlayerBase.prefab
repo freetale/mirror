@@ -137,6 +137,7 @@ MonoBehaviour:
   SlideCollider2D: {fileID: 1742028883889708823}
   JumpPower: 5
   Speed: 1
+  _isFlip: 0
 --- !u!70 &4768707748608256240
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

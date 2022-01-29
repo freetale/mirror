@@ -2,6 +2,9 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 namespace Mirror.Runtime
 {
@@ -15,7 +18,6 @@ namespace Mirror.Runtime
 
         [Header("Config")]
         public float JumpPower = 1f;
-
         public float Speed = 1;
 
         [SerializeField]
@@ -27,6 +29,7 @@ namespace Mirror.Runtime
             {
                 _isFlip = value;
                 Rigidbody2D.gravityScale = _isFlip ? -1 : 1;
+                transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
             }
         }
 
@@ -75,6 +78,17 @@ namespace Mirror.Runtime
         }
 
 #if UNITY_EDITOR
+
+        private void OnValidate()
+        {
+            if (Rigidbody2D)
+            {
+                Rigidbody2D.gravityScale = _isFlip ? -1 : 1;
+                transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
+                EditorUtility.SetDirty(Rigidbody2D);
+                EditorUtility.SetDirty(transform);
+            }
+        }
 
         private void Reset()
         {
