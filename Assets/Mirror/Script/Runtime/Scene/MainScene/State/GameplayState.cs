@@ -16,9 +16,15 @@ namespace Mirror.Runtime.Scene.MainScene
         public IState FailState { get; set; }
         public IState ContinueState { get; set; }
 
+        public int InitialHealth { get; set; } = 3;
+        public int CurrentHealth { get; set; }
+
         public void OnEnterState()
         {
+            MainScene.MeleePlayer.OnDamage += Player_OnDamage;
+            MainScene.RangePlayer.OnDamage += Player_OnDamage;
 
+            CurrentHealth = InitialHealth;
         }
 
         public void Update(float deltaTime)
@@ -26,9 +32,28 @@ namespace Mirror.Runtime.Scene.MainScene
 
         }
 
+        public void FixedUpdate(float fixedDeltaTime)
+        {
+
+        }
+
         public void OnExitState()
         {
 
+        }
+
+        private void Player_OnDamage(int damage)
+        {
+            CurrentHealth -= damage;
+            if (CurrentHealth <= 0)
+            {
+                OnFail();
+            }
+        }
+
+        private void OnFail()
+        {
+            MainScene.NextState(FailState);
         }
     }
 }

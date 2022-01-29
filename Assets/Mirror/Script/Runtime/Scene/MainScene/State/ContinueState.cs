@@ -11,13 +11,15 @@ namespace Mirror.Runtime.Scene.MainScene
             MainScene = mainScene;
         }
 
+
         public MainScene MainScene { get; set; }
 
         public IState GameplayState { get; set; }
 
+        private ContinueScreen continueScreen => MainScene.MainSceneUI.ContinueScreen;
+
         public void OnEnterState()
         {
-            ContinueScreen continueScreen = MainScene.MainSceneUI.ContinueScreen;
             continueScreen.IsActive = true;
             continueScreen.OnContinueClick += ContinueScreen_OnContinueClick;
         }
@@ -34,7 +36,6 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnExitState()
         {
-            ContinueScreen continueScreen = MainScene.MainSceneUI.ContinueScreen;
             continueScreen.IsActive = false;
             continueScreen.OnContinueClick -= ContinueScreen_OnContinueClick;
         }

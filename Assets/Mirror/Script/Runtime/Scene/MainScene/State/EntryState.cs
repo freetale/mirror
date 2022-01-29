@@ -15,9 +15,9 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public IState GameplayState { get; set; }
 
+        private EntryScreen entryScreen => MainScene.MainSceneUI.EntryScreen;
         public void OnEnterState()
         {
-            var entryScreen = MainScene.MainSceneUI.EntryScreen;
             entryScreen.IsActive = true;
             entryScreen.OnStart += EntryScreen_OnStart;
         }
@@ -34,9 +34,7 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnExitState()
         {
-            var entryScreen = MainScene.MainSceneUI.EntryScreen;
             entryScreen.IsActive = false;
-
         }
     }
 }

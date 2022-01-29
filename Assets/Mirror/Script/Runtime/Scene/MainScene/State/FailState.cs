@@ -15,9 +15,10 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public IState EntryState { get; set; }
 
+        private FailScreen failScreen => MainScene.MainSceneUI.FailScreen;
+
         public void OnEnterState()
         {
-            var failScreen = MainScene.MainSceneUI.FailScreen;
             failScreen.IsActive = true;
             failScreen.OnRetryClick += FailScreen_OnRetryClick;
         }
@@ -34,7 +35,6 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnExitState()
         {
-            var failScreen = MainScene.MainSceneUI.FailScreen;
             failScreen.IsActive = false;
         }
     }
