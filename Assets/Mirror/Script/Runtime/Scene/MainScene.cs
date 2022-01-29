@@ -48,7 +48,6 @@ namespace Mirror.Runtime
             RangePlayer.IsFlip = meleeFlip;
             MeleePlayer.Velocity *= -1;
             RangePlayer.Velocity *= -1;
-
         }
     }
 }
