@@ -13,12 +13,12 @@ namespace Mirror.Runtime
         [Header("Component")]
         [Required]
         public Rigidbody2D Rigidbody2D;
-        public Collider2D NormalCollider2D;
-        public Collider2D SlideCollider2D;
+        public CapsuleCollider2D NormalCollider2D;
+        public CapsuleCollider2D SlideCollider2D;
 
         [Header("Config")]
         public float JumpPower = 1f;
-        public float Speed = 1;
+        public float GroundCheckDistance = 0.2f;
 
         [SerializeField]
         private bool _isFlip;
@@ -37,7 +37,7 @@ namespace Mirror.Runtime
         public bool IsSlide
         {
             get => _isSlide;
-            set
+            private set
             {
                 _isSlide = value;
                 NormalCollider2D.enabled = !_isSlide;
@@ -47,34 +47,40 @@ namespace Mirror.Runtime
 
         public InputState InputState { get; set; }
 
+
+        /// <summary>
+        /// internal use for <see cref="IsGrounded"/>
+        /// </summary>
+        private RaycastHit2D[] raycastHit2Ds = new RaycastHit2D[1];
+
         public void FixedUpdateObject(float fixedDeltaTime)
         {
-            UpdatePosition(fixedDeltaTime);
-            if (InputState.IsJump)
+            if (InputState.IsJump && IsGrounded())
             {
                 DoJump();
             }
-            if (InputState.IsSlide)
+            if (InputState.IsSlide ^ _isSlide)
             {
-                DoSlide();
+                IsSlide = InputState.IsSlide;
             }
         }
 
-        private void UpdatePosition(float fixedDeltaTime)
-        {
-            Vector3 position = transform.position;
-            position.x += Speed * fixedDeltaTime;
-            transform.position = position;
-        }
-
-        public void DoJump()
+        private void DoJump()
         {
             Rigidbody2D.velocity = new Vector2(0, IsFlip ? -JumpPower : JumpPower);
         }
 
-        public void DoSlide()
+        private bool IsGrounded()
         {
+            var direction = _isFlip ? Vector2.up : Vector2.down;
             
+            ContactFilter2D filter = new ContactFilter2D
+            {
+                layerMask = ~Static.GroundLayer,
+
+            };
+            int hitCount =  NormalCollider2D.Cast(direction, filter, raycastHit2Ds, GroundCheckDistance);
+            return hitCount > 0;
         }
 
 #if UNITY_EDITOR

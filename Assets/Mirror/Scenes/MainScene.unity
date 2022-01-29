@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 1078846214}
   - component: {fileID: 1078846213}
   - component: {fileID: 1078846215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MockFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

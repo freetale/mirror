@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1836064649151913445}
   - component: {fileID: 2159434338165989890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4768707748608256240}
   - component: {fileID: 8029049629024044850}
   - component: {fileID: 1742028883889708823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   NormalCollider2D: {fileID: 4768707748608256240}
   SlideCollider2D: {fileID: 1742028883889708823}
   JumpPower: 5
-  Speed: 1
+  GroundCheckDistance: 0.2
   _isFlip: 0
 --- !u!70 &4768707748608256240
 CapsuleCollider2D:
