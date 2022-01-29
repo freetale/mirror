@@ -11,7 +11,7 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void Initialize()
         {
-            
+            HealthIconGroup.Initialize();
         }
     }
 }

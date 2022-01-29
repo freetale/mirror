@@ -56,9 +56,11 @@ namespace Mirror.Runtime
             }
         }
 
+#if UNITY_EDITOR
         private void OnValidate()
         {
             UpdateIcon();
         }
+#endif
     }
 }

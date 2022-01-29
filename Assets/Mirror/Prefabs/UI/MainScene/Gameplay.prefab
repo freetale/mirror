@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0958140804ec14c96cb13f1b825c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthIconGroup: {fileID: 0}
+  HealthIconGroup: {fileID: 5212406833544764493}
 --- !u!1001 &1467858014298994285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +182,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458031f44e643614297790824432728f, type: 3}
+--- !u!114 &5212406833544764493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6631780731498621472, guid: 458031f44e643614297790824432728f, type: 3}
+  m_PrefabInstance: {fileID: 1467858014298994285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6d3a7a0af3e66f4ea2cbc0c7d853eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6874815122318198601 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5419764374111973668, guid: 458031f44e643614297790824432728f, type: 3}
