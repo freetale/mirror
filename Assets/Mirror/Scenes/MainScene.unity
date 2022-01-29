@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 1078846213}
   - component: {fileID: 1078846215}
   m_Layer: 6
-  m_Name: MockFloor
+  m_Name: MockGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
