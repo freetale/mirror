@@ -1,0 +1,44 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+    #ROOTNAMESPACEBEGIN#
+public class #SCRIPTNAME# : MonoBehaviour
+{
+    
+    // ########################################
+    //  CLASS MEMBER
+    // ########################################
+
+    
+
+    // ########################################
+    // CLASS FUNCTION
+    // ########################################
+
+
+
+    // ########################################
+    // CLASS BUILDIN FUNCTION
+    // ########################################
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+    #NOTRIM#
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    #NOTRIM#    
+    }
+
+    // ########################################
+    // CLASS BUILDIN FUNCTION
+    // ########################################
+    
+}
+#ROOTNAMESPACEEND#
