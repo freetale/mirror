@@ -105,7 +105,7 @@ namespace Mirror.Runtime
 
         private void TakeDamage( int damage )
         {
-            Debug.Log("Take damage");
+            Debug.Log( gameObject.name +  " Take damage");
             OnDamage?.Invoke(damage);
         }
 

@@ -49,7 +49,7 @@ namespace Mirror.Runtime.Scene.MainScene
         private void Player_OnDamage(int damage)
         {
             CurrentHealth -= damage;
-            if (CurrentHealth < 0)
+            if (CurrentHealth <= 0)
             {
                 OnFail();
             }
