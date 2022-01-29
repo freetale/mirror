@@ -126,7 +126,10 @@ namespace Mirror.Runtime
             Debug.Log( "layer " + collidingObjectLayer + " == " + LayerMask.NameToLayer( "DamageObstrucle" ) );
 
             if ( collidingObjectLayer == LayerMask.NameToLayer("DamageObstrucle") )
-                TakeDamage( 1 );
+            {
+                int damage = other.gameObject.GetComponent<Obstrucle>().Damage;
+                TakeDamage( damage );
+            }
         }
 
 #if UNITY_EDITOR

@@ -6,20 +6,25 @@ namespace Mirror.Runtime
 {
     public class Obstrucle : MonoBehaviour
     {
+
         [Header("Component")]
         public SkyScroller GroundScroll;
 
         [Header("Config")]
         private float ScrollSpeed;
         public float LeftBound;
+        public int Damage = 1;
 
         // Start is called before the first frame update
         void Start()
         {
 
+            // TODO: spawner should assign speed 
             ScrollSpeed = GroundScroll.ScrollSpeed;
         
         }
+
+
 
         // Update is called once per frame
         void Update()
