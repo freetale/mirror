@@ -11,6 +11,7 @@ namespace Mirror.Runtime.Scene.MainScene
         [Required] public PlayerBase MeleePlayer;
         [Required] public PlayerBase RangePlayer;
         [Required] public MainSceneUI MainSceneUI;
+        [Required] public SFXPool SFXPool;
 
         private InputState InputState { get; set; }
 
