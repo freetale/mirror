@@ -8,10 +8,12 @@ namespace Mirror.Runtime
     public class RangePlayer : MonoBehaviour
     {
         [Required] public PlayerBase PlayerBase;
+        [Required] public Transform AttackStartLocator;
 
         public void DoAttack()
         {
-            
+            var position = AttackStartLocator.position;
+            // TODO: spawn bullet
         }
 
 
