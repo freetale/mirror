@@ -16,7 +16,7 @@ namespace Mirror.Runtime.Scene.MainScene
         public IState FailState { get; set; }
         public IState ContinueState { get; set; }
 
-        public int InitialHealth { get; set; } = 2;
+        public int InitialHealth { get; set; } = 3;
         public int CurrentHealth { get; set; }
 
         public HealthIconGroup HealthIconGroup => MainScene.MainSceneUI.GameplayScreen.HealthIconGroup;
