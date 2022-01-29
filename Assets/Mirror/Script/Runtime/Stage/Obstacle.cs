@@ -7,7 +7,7 @@ using UnityEditor;
 
 namespace Mirror.Runtime
 {
-    public class Obstrucle : AbstractFlipable
+    public class Obstacle : AbstractFlipable
     {
 
         // ########################################
@@ -18,7 +18,7 @@ namespace Mirror.Runtime
         public SkyScroller GroundScroll;
 
         [Header("Config")]
-        private float ScrollSpeed;
+        public float ScrollSpeed;
         public float LeftBound;
         public int Damage = 1;
 
@@ -26,17 +26,7 @@ namespace Mirror.Runtime
         // CLASS FUNCTION
         // ########################################
 
-        public override bool IsFlip
-        {
-            get => _isFlip;
-            set
-            {
-                _isFlip = value;
-                UpdateFlip();
-            }
-        }
-
-        private void UpdateFlip()
+        protected override void UpdateFlip()
         {
             transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
         }
@@ -50,7 +40,7 @@ namespace Mirror.Runtime
             // reset position if out of screen
             if ( transform.position.x < LeftBound )
             {
-                Destroy( gameObject );
+                gameObject.SetActive( false );
             }
 
         }
@@ -64,7 +54,7 @@ namespace Mirror.Runtime
         {
 
             // TODO: spawner should assign speed 
-            ScrollSpeed = GroundScroll.ScrollSpeed;
+            // ScrollSpeed = GroundScroll.ScrollSpeed;
         
         }
 

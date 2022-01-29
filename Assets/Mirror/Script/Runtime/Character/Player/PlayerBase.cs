@@ -26,16 +26,6 @@ namespace Mirror.Runtime
 
         public event Action<int> OnDamage;
 
-        public override bool IsFlip
-        {
-            get => _isFlip;
-            set
-            {
-                _isFlip = value;
-                UpdateFlip();
-            }
-        }
-
         private bool _isSlide;
         public bool IsSlide
         {
@@ -97,7 +87,7 @@ namespace Mirror.Runtime
             return hitCount > 0;
         }
         
-        private void UpdateFlip()
+        protected override void UpdateFlip()
         {
             Rigidbody2D.gravityScale = _isFlip ? -GravityScale : GravityScale;
             transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
@@ -111,10 +101,10 @@ namespace Mirror.Runtime
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            var obstrucle = other.GetComponent<Obstrucle>();
-            if (obstrucle)
+            var obstacle = other.GetComponent< Obstacle >();
+            if (obstacle)
             {
-                TakeDamage(obstrucle.Damage);
+                TakeDamage(obstacle.Damage);
             }
         }
 

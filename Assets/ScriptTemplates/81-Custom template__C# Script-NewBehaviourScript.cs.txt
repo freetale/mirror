@@ -16,7 +16,10 @@ public class #SCRIPTNAME# : MonoBehaviour
     // CLASS FUNCTION
     // ########################################
 
-
+    void UpdateObject( float deltaTime )
+    {
+        #NOTRIM#
+    }
 
     // ########################################
     // CLASS BUILDIN FUNCTION
@@ -37,8 +40,14 @@ public class #SCRIPTNAME# : MonoBehaviour
     }
 
     // ########################################
-    // CLASS BUILDIN FUNCTION
+    // CLASS EDITOR FUNCTION
     // ########################################
+
+    #if UNITY_EDITOR
+
+
+    #endif
+
     
 }
 #ROOTNAMESPACEEND#

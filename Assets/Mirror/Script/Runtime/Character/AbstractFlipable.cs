@@ -11,8 +11,16 @@ namespace Mirror.Runtime
         protected bool _isFlip;
         public virtual bool IsFlip
         {
-            get;
-            set;
+            get => _isFlip;
+            set
+            {
+                _isFlip = value;
+                UpdateFlip();
+            }
+        }
+
+        protected virtual void UpdateFlip(){
+            throw new System.NotImplementedException("Update flip for " +  this.GetType().Name + " class is not implemented yet " );
         }
     }
 }
