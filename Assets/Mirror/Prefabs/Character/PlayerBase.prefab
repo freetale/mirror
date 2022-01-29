@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03bf8ff3b62a0134d84af2c624d3f6b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isFlip: 0
   Rigidbody2D: {fileID: 8029049629024044850}
   NormalCollider2D: {fileID: 4768707748608256240}
   SlideCollider2D: {fileID: 1742028883889708823}
@@ -142,7 +143,6 @@ MonoBehaviour:
   GroundCheckDistance: 0.02
   GravityScale: 3
   MaxHealth: 2
-  _isFlip: 0
 --- !u!70 &4768707748608256240
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -7,6 +7,11 @@ namespace Mirror.Runtime
 {
     public class SkyScroller : MonoBehaviour
     {
+
+        // ########################################
+        //  CLASS MEMBER
+        // ########################################
+
         [Header("Component")]
         [Required]
         public BoxCollider2D Collider;
@@ -17,19 +22,9 @@ namespace Mirror.Runtime
 
         private float width;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            width = Collider.size.x;
-            Collider.enabled = isEableCollider;
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            UpdateObject( Time.deltaTime );
-        }
+        // ########################################
+        // CLASS FUNCTION
+        // ########################################
         
         public void UpdateObject( float deltaTime)
         {   
@@ -52,6 +47,24 @@ namespace Mirror.Runtime
         {
             Vector3 resetPostion = new Vector3( positionX, positionY, 0 );
             transform.position = transform.position + resetPostion;
+        }
+
+        // ########################################
+        // CLASS BUILDIN FUNCTION
+        // ########################################
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            width = Collider.size.x;
+            Collider.enabled = isEableCollider;
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            UpdateObject( Time.deltaTime );
         }
 
 #if UNITY_EDITOR
