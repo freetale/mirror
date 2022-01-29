@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -24,8 +25,8 @@ namespace Mirror.Runtime
         public float JumpPower = 1f;
         public float GroundCheckDistance = 0.2f;
         public float GravityScale = 1;
-        public float MaxHealth = 2;
-        private float CurrentHealth = 2;
+
+        public event Action<int> OnDamage;
 
         public override bool IsFlip
         {
@@ -94,8 +95,7 @@ namespace Mirror.Runtime
             
             ContactFilter2D filter = new ContactFilter2D
             {
-                layerMask = ~Static.GroundLayer,
-
+                layerMask = ~(1 << Static.GroundLayer),
             };
             int hitCount =  NormalCollider2D.Cast(direction, filter, raycastHit2Ds, GroundCheckDistance);
             return hitCount > 0;
@@ -109,29 +109,16 @@ namespace Mirror.Runtime
 
         private void TakeDamage( int damage )
         {
-            CurrentHealth -= damage;
-            if ( CurrentHealth <= 0 )
-                KillPlayer();
-
-            Debug.Log( CurrentHealth );
-        }
-
-        private void KillPlayer()
-        {
-            // TODO: trigger death scene
-            gameObject.SetActive( false );
+            Debug.Log("Take damage");
+            OnDamage?.Invoke(damage);
         }
 
         void OnTriggerEnter2D(Collider2D other)
         {
-            var collidingObjectLayer = other.gameObject.layer;
-
-            Debug.Log( "layer " + collidingObjectLayer + " == " + LayerMask.NameToLayer( "DamageObstrucle" ) );
-
-            if ( collidingObjectLayer == LayerMask.NameToLayer("DamageObstrucle") )
+            var obstrucle = other.GetComponent<Obstrucle>();
+            if (obstrucle)
             {
-                int damage = other.gameObject.GetComponent<Obstrucle>().Damage;
-                TakeDamage( damage );
+                TakeDamage(obstrucle.Damage);
             }
         }
 
@@ -145,12 +132,6 @@ namespace Mirror.Runtime
                 EditorUtility.SetDirty(Rigidbody2D);
                 EditorUtility.SetDirty(transform);
             }
-
-            if ( CurrentHealth > MaxHealth )
-            {
-                CurrentHealth = MaxHealth;
-            }
-
         }
 
         private void Reset()

@@ -7,7 +7,8 @@ namespace Mirror.Runtime
     public class Static
     {
 
-        public static LayerMask PlayerLayer { get; } =  1 << LayerMask.NameToLayer("Player");
-        public static LayerMask GroundLayer { get; } = 1 << LayerMask.NameToLayer("Ground");
+        public static LayerMask PlayerLayer { get; } = LayerMask.NameToLayer("Player");
+        public static LayerMask GroundLayer { get; } = LayerMask.NameToLayer("Ground");
+        public static LayerMask DamageObstrucleLayer { get; } = LayerMask.NameToLayer("DamageObstrucle");
     }
 }
