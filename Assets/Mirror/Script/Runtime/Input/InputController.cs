@@ -13,6 +13,8 @@ namespace Mirror.Runtime
         {
             InputState.IsJump = Input.GetButton("Jump");
             InputState.IsSlide = Input.GetButton("Slide");
+            InputState.IsFireDown = Input.GetButtonDown("Fire1");
+            InputState.IsSwapDown = Input.GetButtonDown("Swap");
         }
     }
 }

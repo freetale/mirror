@@ -138,9 +138,9 @@ MonoBehaviour:
   SlideCollider2D: {fileID: 1742028883889708823}
   NormalCapsule: {fileID: 3721208197129257331}
   SlideCapsule: {fileID: 6893462695848862195}
-  JumpPower: 5
-  GroundCheckDistance: 0.2
-  GravityScale: 1
+  JumpPower: 10
+  GroundCheckDistance: 0.02
+  GravityScale: 3
   MaxHealth: 2
   _isFlip: 0
 --- !u!70 &4768707748608256240
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

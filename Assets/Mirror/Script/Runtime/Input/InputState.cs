@@ -8,5 +8,8 @@ namespace Mirror.Runtime
     {
         public bool IsJump { get; set; }
         public bool IsSlide { get; set; }
+        public bool IsFireDown { get; set; }
+
+        public bool IsSwapDown { get; set; }
     }
 }

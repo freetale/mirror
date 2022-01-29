@@ -54,6 +54,18 @@ namespace Mirror.Runtime
             }
         }
 
+        public Vector3 Position
+        {
+            get => transform.position;
+            set => transform.position = value;
+        }
+
+        public Vector2 Velocity
+        {
+            get => Rigidbody2D.velocity;
+            set => Rigidbody2D.velocity = value;
+        }
+
         public InputState InputState { get; set; }
 
 
