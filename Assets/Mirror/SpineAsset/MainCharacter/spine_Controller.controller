@@ -707,13 +707,13 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 3591564683129668808}
-    second:
-    - {fileID: 1506606945711392664}
   - first: {fileID: -5917995998893229023}
     second:
     - {fileID: 1645203499904008013}
     - {fileID: -4743249888799835457}
+  - first: {fileID: 3591564683129668808}
+    second:
+    - {fileID: 1506606945711392664}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 200, y: 160, z: 0}
   m_EntryPosition: {x: 50, y: 120, z: 0}
@@ -1049,25 +1049,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Velocity
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Is Slide
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Attack
-    m_Type: 9
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
