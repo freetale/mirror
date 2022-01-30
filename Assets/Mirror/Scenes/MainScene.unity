@@ -1729,8 +1729,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11fe6bf29a6cf64ea978e341ab72659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pools: {fileID: 1609312050}
+  BlockTemplates:
+  - {fileID: 4513711610745706577, guid: aa8327066212a3345bd3bf377bed4273, type: 3}
+  - {fileID: 1756626216760749922, guid: 96f7eafb27b1206489028cbf34f9d0e7, type: 3}
+  - {fileID: 5319830091444691178, guid: daa10f1ddd66d20448b03b56efe56d8e, type: 3}
+  - {fileID: 7372375298569723731, guid: b5a715da5f21c214e8bc66f1b3c89306, type: 3}
+  pools: []
   Scene: {fileID: 1609312049}
+  SpawnDistance: 1
 --- !u!1 &1683789561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1337352884345081949, guid: b6a33730c363d904088d456700af526d, type: 3}
