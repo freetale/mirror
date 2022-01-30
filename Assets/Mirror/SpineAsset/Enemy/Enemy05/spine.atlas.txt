@@ -1,0 +1,45 @@
+spine.png
+size:400,96
+filter:Linear,Linear
+pma:true
+Blood Copy
+bounds:300,66,28,44
+rotate:90
+Body L
+bounds:123,11,83,120
+rotate:90
+Body R
+bounds:2,7,87,119
+rotate:90
+Hole Copy
+bounds:245,55,39,53
+rotate:90
+Spike1
+bounds:346,58,34,36
+Spike2
+bounds:245,26,27,43
+rotate:90
+Spike3
+bounds:245,5,39,19
+Spike4
+bounds:374,18,38,24
+rotate:90
+Spike5
+bounds:335,24,32,37
+rotate:90
+Stalk1
+bounds:300,29,35,33
+offsets:0,0,35,34
+rotate:90
+Stalk2
+bounds:321,7,15,33
+rotate:90
+Stalk3
+bounds:356,2,33,14
+Stalk4
+bounds:382,68,26,16
+rotate:90
+Stalk5
+bounds:290,2,25,29
+offsets:11,0,36,57
+rotate:90
