@@ -17,9 +17,9 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public event Action OnRetryClick;
 
-        [NonSerialized] public string MileTraveledFormat = "{0} Mile <size=36>Traveled</size>";
-        [NonSerialized] public string LongestRunFormat = "<size=36>longest run</size> {0} Mile";
-        [NonSerialized] public string MilePastedFormat = "{0} Mile Pasted";
+        [NonSerialized] public string MileTraveledFormat = "{0} Miles <size=36>Traveled</size>";
+        [NonSerialized] public string LongestRunFormat = "<size=36>longest run</size> {0} Miles";
+        [NonSerialized] public string MilePastedFormat = "{0} Miles Pasted";
 
         private int mileTraveled;
         public int MileTraveled
