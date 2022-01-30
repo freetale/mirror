@@ -1593,7 +1593,7 @@ MonoBehaviour:
   - {fileID: 7224001269938553085, guid: 49144d65035675242b862c7e794302d8, type: 3}
   pools: []
   Scene: {fileID: 1609312049}
-  SpawnDistance: 1
+  SpawnDistance: 0.8
 --- !u!1 &1748030436
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8410126985220533195, guid: a47efdedf32280a4199fd54e4f5c1c85, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a47efdedf32280a4199fd54e4f5c1c85, type: 3}
