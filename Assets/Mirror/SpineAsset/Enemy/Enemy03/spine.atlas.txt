@@ -1,0 +1,17 @@
+spine.png
+size:272,104
+filter:Linear,Linear
+pma:true
+Blood
+bounds:231,3,28,44
+Body
+bounds:2,2,100,80
+rotate:90
+Face L
+bounds:157,16,86,72
+rotate:90
+Face R
+bounds:84,7,95,71
+rotate:90
+Hole
+bounds:231,49,39,53
