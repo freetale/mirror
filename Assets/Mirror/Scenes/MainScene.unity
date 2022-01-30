@@ -1595,7 +1595,7 @@ MonoBehaviour:
   - {fileID: 7224001269938553085, guid: 49144d65035675242b862c7e794302d8, type: 3}
   pools: []
   Scene: {fileID: 1609312049}
-  SpawnDistance: 0.8
+  SpawnDistance: 1
 --- !u!114 &1609312052
 MonoBehaviour:
   m_ObjectHideFlags: 0
