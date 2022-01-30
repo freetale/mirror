@@ -14,7 +14,7 @@ namespace Mirror.Runtime.Scene.MainScene
         public MainScene MainScene { get; set; }
 
         public IState FailState { get; set; }
-        public IState ContinueState { get; set; }
+        //public IState ContinueState { get; set; }
 
         public int InitialHealth { get; set; } = 3;
         public int CurrentHealth { get; set; }
