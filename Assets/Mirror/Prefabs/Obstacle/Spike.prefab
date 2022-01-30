@@ -126,5 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isFlip: 1
   GroundScroll: {fileID: 0}
+  ScrollSpeed: 0
   LeftBound: -12
   Damage: 1
