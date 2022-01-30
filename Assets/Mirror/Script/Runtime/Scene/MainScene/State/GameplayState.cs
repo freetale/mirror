@@ -29,6 +29,8 @@ namespace Mirror.Runtime.Scene.MainScene
             CurrentHealth = InitialHealth;
             HealthIconGroup.CurrentHealth = CurrentHealth;
             HealthIconGroup.MaxHealth = CurrentHealth;
+
+            MainScene.StartSpawn();
         }
 
         public void Update(float deltaTime)
@@ -44,6 +46,7 @@ namespace Mirror.Runtime.Scene.MainScene
         {
             MainScene.MeleePlayer.PlayerBase.OnDamage -= Player_OnDamage;
             MainScene.RangePlayer.PlayerBase.OnDamage -= Player_OnDamage;
+            MainScene.StopSpawn();
         }
 
         private void Player_OnDamage(int damage)

@@ -14,11 +14,9 @@ namespace Mirror.Runtime
         //  CLASS MEMBER
         // ########################################
 
-        [Header("Component")]
-        public SkyScroller GroundScroll;
-
         [Header("Config")]
-        public float ScrollSpeed;
+        private float ScrollSpeed;
+        public float ScrollSpeedMultiplier = 1;
         public float LeftBound;
         public int Damage = 1;
 
@@ -35,13 +33,21 @@ namespace Mirror.Runtime
         {
             
              // move object
-            transform.Translate( - ScrollSpeed * deltaTime, 0, 0) ;
+            transform.Translate( - ScrollSpeed * ScrollSpeedMultiplier * deltaTime, 0, 0) ;
 
             // reset position if out of screen
             if ( transform.position.x < LeftBound )
             {
                 gameObject.SetActive( false );
             }
+
+        }
+
+        // event set scrollspeed subscriber
+        public void SetScrollSpeed( float speed )
+        {
+
+            ScrollSpeed = speed;
 
         }
 
@@ -52,10 +58,7 @@ namespace Mirror.Runtime
         // Start is called before the first frame update
         void Start()
         {
-
-            // TODO: spawner should assign speed 
-            // ScrollSpeed = GroundScroll.ScrollSpeed;
-        
+            
         }
 
         // Update is called once per frame
@@ -73,7 +76,6 @@ namespace Mirror.Runtime
         /// </summary>
         void Reset()
         {
-            GroundScroll = GetComponent<SkyScroller>();
         }
 
         private void OnValidate()

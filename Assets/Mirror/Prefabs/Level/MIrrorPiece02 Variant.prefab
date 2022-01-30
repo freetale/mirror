@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: isEableCollider
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1217788111, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
+      propertyPath: ScrollSpeedMultiplier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1833193150986830757, guid: 8a1194bcabf3f074c8fced17854f60da, type: 3}
       propertyPath: m_Name
       value: MIrrorPiece02 Variant

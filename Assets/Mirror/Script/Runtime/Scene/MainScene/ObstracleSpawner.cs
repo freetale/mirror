@@ -15,6 +15,8 @@ namespace Mirror.Runtime
 
         private bool isStartSpawn;
 
+        public Scene.MainScene.MainScene Scene;
+
         // ########################################
         // CLASS FUNCTION
         // ########################################
@@ -44,7 +46,7 @@ namespace Mirror.Runtime
             {
                 // TODO: get some spawn condition
                 Debug.Log( "random value " + Random.value );
-                if ( Random.value * 100 < pools.Pools[1].spawnChance_percent )
+                if ( Random.value * 100 < pools.Pools[0].spawnChance_percent )
                 {
                     SpawnObstracle();
                 }
@@ -79,6 +81,9 @@ namespace Mirror.Runtime
             // set correct flip
             Obstacle obstacle = spawnedObject.GetComponent< Obstacle >();
             obstacle.IsFlip = isFlip ;
+
+            obstacle.SetScrollSpeed( Scene.LevelSpeed );
+            Scene.OnSetLevelSpeed += obstacle.SetScrollSpeed;
         
         }
 

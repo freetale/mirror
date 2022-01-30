@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Mirror.Runtime.Scene.MainScene
 {
@@ -12,6 +13,24 @@ namespace Mirror.Runtime.Scene.MainScene
         [Required] public RangePlayer RangePlayer;
         [Required] public MainSceneUI MainSceneUI;
         [Required] public SFXPool SFXPool;
+        [Required] public ObstracleSpawner ObsSpawner;
+
+        [Header("Config")]
+        [SerializeField]
+        protected float _LevelSpeed;
+        public float LevelSpeed
+        {
+            get => _LevelSpeed;
+            set
+            {
+                _LevelSpeed = value;
+                UpdateLevelSpeed();
+
+            }
+        }
+
+        [Header("Stage")]
+        public List<GameObject> environment;
 
         private InputState InputState { get; set; }
 
@@ -23,6 +42,8 @@ namespace Mirror.Runtime.Scene.MainScene
         private bool stateGaurd { get; set; }
         public IState CurrentState { get; set; }
 
+        public event Action<float> OnSetLevelSpeed;
+
         public void Start()
         {
             MainSceneUI.Initialize();
@@ -33,6 +54,17 @@ namespace Mirror.Runtime.Scene.MainScene
             InputController.InputState = state;
             MeleePlayer.PlayerBase.InputState = state;
             RangePlayer.PlayerBase.InputState = state;
+
+            SubscribeEnvironmentToEvent();
+        }
+
+        private void SubscribeEnvironmentToEvent()
+        {
+            foreach ( GameObject obj in environment )
+            {
+                SkyScroller scroller = obj.GetComponent<SkyScroller>();
+                OnSetLevelSpeed += scroller.SetScrollSpeed;
+            }
         }
 
         private void InitializeState()
@@ -81,6 +113,16 @@ namespace Mirror.Runtime.Scene.MainScene
             RangePlayer.PlayerBase.Velocity *= -1;
         }
 
+        public void StartSpawn()
+        {
+            ObsSpawner.DoStartSpawn();
+        }
+
+        public void StopSpawn()
+        {
+            ObsSpawner.DoStopSpawn();
+        }
+
         public void NextState(IState state)
         {
             if (stateGaurd)
@@ -93,5 +135,28 @@ namespace Mirror.Runtime.Scene.MainScene
             CurrentState.OnEnterState();
             stateGaurd = false;
         }
+
+        public void UpdateLevelSpeed()
+        {
+            OnSetLevelSpeed?.Invoke( _LevelSpeed );
+        }
+
+#if UNITY_EDITOR
+
+        /// <summary>
+        /// Called when the script is loaded or a value is changed in the
+        /// inspector (Called in the editor only).
+        /// </summary>
+        void OnValidate()
+        {
+            // OnSetLevelSpeed?.Invoke( _LevelSpeed );
+            foreach ( GameObject obj in environment )
+            {
+                SkyScroller scroller = obj.GetComponent<SkyScroller>();
+                scroller.SetScrollSpeed( _LevelSpeed ) ;
+            }
+        }
+#endif
+
     }
 }

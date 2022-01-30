@@ -17,7 +17,8 @@ namespace Mirror.Runtime
         public BoxCollider2D Collider;
 
         [Header("Config")]
-        public float ScrollSpeed;
+        private float ScrollSpeed;
+        public float ScrollSpeedMultiplier = 1;
         public bool isEableCollider;
 
         private float width;
@@ -29,7 +30,7 @@ namespace Mirror.Runtime
         public void UpdateObject( float deltaTime)
         {   
             // move object
-            slide( - ScrollSpeed * deltaTime ) ;
+            Scroll( - ScrollSpeed * ScrollSpeedMultiplier * deltaTime ) ;
 
             // reset position if out of screen
             if ( transform.position.x < -width )
@@ -38,7 +39,7 @@ namespace Mirror.Runtime
             }
         }
 
-        private void slide( float distance )
+        private void Scroll( float distance )
         {
             transform.Translate( distance, 0, 0) ;
         }
@@ -47,6 +48,13 @@ namespace Mirror.Runtime
         {
             Vector3 resetPostion = new Vector3( positionX, positionY, 0 );
             transform.position = transform.position + resetPostion;
+        }
+
+         public void SetScrollSpeed( float speed )
+        {
+
+            ScrollSpeed = speed;
+            
         }
 
         // ########################################

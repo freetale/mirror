@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10028074764941741, guid: 12b7226b7a6f28f4d81ebfc8b21cefe1, type: 3}
+      propertyPath: ScrollSpeedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2080444763946451637, guid: 12b7226b7a6f28f4d81ebfc8b21cefe1, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -22,6 +26,10 @@ PrefabInstance:
     - target: {fileID: 4632560322703950692, guid: 12b7226b7a6f28f4d81ebfc8b21cefe1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7313116042257361488, guid: 12b7226b7a6f28f4d81ebfc8b21cefe1, type: 3}
+      propertyPath: ScrollSpeedMultiplier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8755544465076736328, guid: 12b7226b7a6f28f4d81ebfc8b21cefe1, type: 3}
       propertyPath: m_Sprite
