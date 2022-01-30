@@ -21,6 +21,7 @@ namespace Mirror.Runtime
         public float JumpPower = 1f;
         public float GroundCheckDistance = 0.2f;
         public float GravityScale = 1;
+        public bool isMelee = false;
 
         public event Action<int> OnDamage;
 
@@ -52,6 +53,15 @@ namespace Mirror.Runtime
         public InputState InputState { get; set; }
 
         /// <summary>
+        /// Start is called on the frame when a script is enabled just before
+        /// any of the Update methods is called the first time.
+        /// </summary>
+        void Start()
+        {
+            PlayerAnimator.IsMelee = isMelee;
+        }
+
+        /// <summary>
         /// internal use for <see cref="IsGrounded"/>
         /// </summary>
         private RaycastHit2D[] raycastHit2Ds = new RaycastHit2D[1];
@@ -66,6 +76,11 @@ namespace Mirror.Runtime
                 IsSlide = InputState.IsSlide;
             }
             PlayerAnimator.Velocity = Rigidbody2D.velocity.y * (_isFlip ? -1 : 1);
+
+            if ( InputState.IsFireDown )
+            {
+                PlayerAnimator.Attack();
+            }
         }
 
         private void DoJump()

@@ -45,7 +45,6 @@ namespace Mirror.Runtime
             if ( isStartSpawn )
             {
                 // TODO: get some spawn condition
-                Debug.Log( "random value " + Random.value );
                 if ( Random.value * 100 < pools.Pools[0].spawnChance_percent )
                 {
                     SpawnObstracle();
