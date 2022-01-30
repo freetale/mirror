@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,11 +8,13 @@ namespace Mirror.Runtime.Scene.MainScene
 {
     public class GameplayScreen : UIScreenBase
     {
-        public HealthIconGroup HealthIconGroup;
+        [Required] public HealthIconGroup HealthIconGroup;
+        [Required] public MileCounter MileCounter;
 
         public void Initialize()
         {
             HealthIconGroup.Initialize();
+            MileCounter.Initialize();
         }
     }
 }
