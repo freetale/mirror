@@ -11,47 +11,59 @@ namespace Mirror.Runtime
         //  CLASS MEMBER
         // ########################################
 
-        public ObstaclePools pools;
+        public List<GameObject> BlockTemplates;
+
+        public List<Pool> pools;
 
         private bool isStartSpawn;
 
         public Scene.MainScene.MainScene Scene;
 
+        public float SpawnDistance = 1f;
+        private float currentDistance = 0;
         // ########################################
         // CLASS FUNCTION
         // ########################################
-
         // event subscriber
+        private void Start()
+        {
+            for (int i = 0; i < BlockTemplates.Count; i++)
+            {
+                var go = new GameObject();
+                var pool = go.AddComponent<Pool>();
+                pool.Template = BlockTemplates[i];
+                pools.Add(pool);
+            }
+        }
         public void DoStartSpawn()
         {
-            SetSpawn( true );
+            SetSpawn(true);
         }
 
         // event subscriber
         public void DoStopSpawn()
         {
-            SetSpawn( false );
+            SetSpawn(false);
         }
 
-        private void SetSpawn( bool shouldSpawn )
+        private void SetSpawn(bool shouldSpawn)
         {
             isStartSpawn = shouldSpawn;
         }
 
-        void UpdateObject( float deltaTime)
+        void UpdateObject(float deltaTime)
         {
-
             // continue spawn
-            if ( isStartSpawn )
+            if (!isStartSpawn)
             {
-                // TODO: get some spawn condition
-                if ( Random.value * 100 < pools.Pools[0].spawnChance_percent )
-                {
-                    SpawnObstracle();
-                }
-
+                return;
             }
-            
+            currentDistance -= deltaTime;
+            if (currentDistance < 0)
+            {
+                currentDistance += SpawnDistance;
+                SpawnObstracle();
+            }
         }
 
         private void SpawnObstracle()
@@ -60,61 +72,22 @@ namespace Mirror.Runtime
             // random generate? setting file? tile? 
 
             // random position on 2d space
-            Vector2 spawnPosition = new Vector2( Random.Range( 10, 20 ), Random.Range( -3, 3 ) );
-            
-            // if position < 0 meaning object is in mirror world (flip)
-            bool isFlip = spawnPosition.y < 0;
+            Vector2 spawnPosition = new Vector2(15, 0);
 
-            //  if object is blow non-dodgable height then move up
-            if ( Mathf.Abs(spawnPosition.y) < 0.5f )
-            {
-                if( isFlip )
-                    spawnPosition.y = -0.6f;
-                else
-                    spawnPosition.y = 0.6f;
-            }  
+            var poolIndex = Random.Range(0, pools.Count);
+            var pool = pools[poolIndex];
+            ObstacleBlock obstacle = pool.PickOne<ObstacleBlock>();
 
-            // spawn box
-            GameObject spawnedObject = pools.SpawnObject( "Box", spawnPosition );
-
-            // set correct flip
-            Obstacle obstacle = spawnedObject.GetComponent< Obstacle >();
-            obstacle.IsFlip = isFlip ;
-
-            obstacle.SetScrollSpeed( Scene.LevelSpeed );
-            Scene.OnSetLevelSpeed += obstacle.SetScrollSpeed;
-        
-        }
-
-        // ########################################
-        // CLASS BUILDIN FUNCTION
-        // ########################################
-
-
-        // Start is called before the first frame update
-        void Start()
-        {
-        
+            obstacle.ScrollSpeed = Scene.LevelSpeed;
+            obstacle.transform.position = spawnPosition;
+            obstacle.gameObject.SetActive(true);
         }
 
         // Update is called once per frame
         void Update()
         {
-            UpdateObject( Time.deltaTime );
+            UpdateObject(Time.deltaTime);
         }
 
-        // ########################################
-        // CLASS EDITOR FUNCTION
-        // ########################################
-        
-        /// <summary>
-        /// Reset is called when the user hits the Reset button in the Inspector's
-        /// context menu or when adding the component the first time.
-        /// </summary>
-        void Reset()
-        {
-            pools = GetComponent< ObstaclePools >();
-        }
-        
     }
 }

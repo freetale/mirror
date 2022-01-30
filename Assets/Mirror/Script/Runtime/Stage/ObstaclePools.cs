@@ -74,19 +74,5 @@ namespace Mirror.Runtime
             return spawnObject;
         }
 
-        // ########################################
-        // CLASS BUILDIN FUNCTION
-        // ########################################
-
-        /// <summary>
-        /// Start is called on the frame when a script is enabled just before
-        /// any of the Update methods is called the first time.
-        /// </summary>
-        void Start()
-        {
-            PoolDict = new Dictionary<string, Queue<GameObject>>();
-            InstantiateAllObjectInPool();
-        }
-
     }
 }
