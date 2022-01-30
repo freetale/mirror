@@ -61,6 +61,7 @@ namespace Mirror.Runtime.Scene.MainScene
             foreach ( GameObject obj in environment )
             {
                 SkyScroller scroller = obj.GetComponent<SkyScroller>();
+                scroller.SetScrollSpeed(LevelSpeed);
                 OnSetLevelSpeed += scroller.SetScrollSpeed;
             }
         }
