@@ -13,6 +13,7 @@ namespace Mirror.Runtime.Scene.MainScene
         [Required] public RangePlayer RangePlayer;
         [Required] public MainSceneUI MainSceneUI;
         [Required] public SFXPool SFXPool;
+        [Required] public SFXGroup SFXGroup;
         [Required] public ObstracleSpawner ObsSpawner;
 
         [Header("Config")]

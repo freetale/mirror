@@ -61,6 +61,7 @@ namespace Mirror.Runtime.Scene.MainScene
 
         private void Player_OnDamage(int damage)
         {
+            MainScene.SFXGroup.PlayDamage();
             CurrentHealth -= damage;
             if (CurrentHealth <= 0)
             {

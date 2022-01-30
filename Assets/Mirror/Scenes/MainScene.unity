@@ -1483,6 +1483,7 @@ GameObject:
   - component: {fileID: 1609312049}
   - component: {fileID: 1609312051}
   - component: {fileID: 1609312050}
+  - component: {fileID: 1609312052}
   m_Layer: 0
   m_Name: SceneHandler
   m_TagString: Untagged
@@ -1536,6 +1537,7 @@ MonoBehaviour:
   RangePlayer: {fileID: 1064834862}
   MainSceneUI: {fileID: 1506691649}
   SFXPool: {fileID: 99937756}
+  SFXGroup: {fileID: 1609312052}
   ObsSpawner: {fileID: 1609312051}
   _LevelSpeed: 5
   environment:
@@ -1592,6 +1594,22 @@ MonoBehaviour:
   pools: []
   Scene: {fileID: 1609312049}
   SpawnDistance: 0.8
+--- !u!114 &1609312052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609312046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb35fed7bd722648bdce63d0fb85419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damange: {fileID: 8300000, guid: 5875d83236053454d84734695d219967, type: 3}
+  Bonus: {fileID: 8300000, guid: 63742904d10853c42bf1a85b1ea54dd7, type: 3}
+  Attack: {fileID: 0}
+  SFXPool: {fileID: 99937756}
 --- !u!1 &1748030436
 GameObject:
   m_ObjectHideFlags: 0
