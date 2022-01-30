@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Mirror.Runtime.Scene.MainScene
 {
+    [Obsolete]
     public class ContinueScreen : UIScreenBase
     {
 

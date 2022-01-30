@@ -1047,7 +1047,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.04
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2116,6 +2116,14 @@ PrefabInstance:
     - target: {fileID: 4099897302319288529, guid: 51015603155a7d043a5c03f281671ebd, type: 3}
       propertyPath: m_Name
       value: Gameplay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4099897302319288529, guid: 51015603155a7d043a5c03f281671ebd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306621894124675313, guid: 51015603155a7d043a5c03f281671ebd, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6195267562722707858, guid: 51015603155a7d043a5c03f281671ebd, type: 3}
       propertyPath: m_Pivot.x

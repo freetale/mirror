@@ -33,9 +33,8 @@ namespace Mirror.Runtime.Scene.MainScene
         public List<GameObject> environment;
 
         private InputState InputState { get; set; }
-
         public EntryState EntryState { get; set; }
-        public ContinueState ContinueState { get; set; }
+        //public ContinueState ContinueState { get; set; }
         public FailState FailState { get; set; }
         public GameplayState GameplayState { get; set; }
 
@@ -43,7 +42,6 @@ namespace Mirror.Runtime.Scene.MainScene
         public IState CurrentState { get; set; }
 
         public event Action<float> OnSetLevelSpeed;
-
         public void Start()
         {
             MainSceneUI.Initialize();
@@ -70,15 +68,15 @@ namespace Mirror.Runtime.Scene.MainScene
         private void InitializeState()
         {
             EntryState = new EntryState(this);
-            ContinueState = new ContinueState(this);
+            //ContinueState = new ContinueState(this);
             FailState = new FailState(this);
             GameplayState = new GameplayState(this);
 
             EntryState.GameplayState = GameplayState;
-            ContinueState.GameplayState = GameplayState;
+            //ContinueState.GameplayState = GameplayState;
             FailState.EntryState = EntryState;
             GameplayState.FailState = FailState;
-            GameplayState.ContinueState = ContinueState;
+            //GameplayState.ContinueState = ContinueState;
 
             CurrentState = EntryState;
             CurrentState.OnEnterState();
