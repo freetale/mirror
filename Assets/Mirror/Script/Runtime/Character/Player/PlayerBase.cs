@@ -15,7 +15,7 @@ namespace Mirror.Runtime
         [Required] public Rigidbody2D Rigidbody2D;
         [Required] public CapsuleCollider2D NormalCollider2D;
         [Required] public CapsuleCollider2D SlideCollider2D;
-        [Required] public PlayerAnimator PlayerAnimator;
+        [Required] public PlayerAnimator PlyAnimator;
 
         [Header("Config")]
         public float JumpPower = 1f;
@@ -34,7 +34,7 @@ namespace Mirror.Runtime
                 _isSlide = value;
                 NormalCollider2D.enabled = !_isSlide;
                 SlideCollider2D.enabled = _isSlide;
-                PlayerAnimator.IsSlide = _isSlide;
+                PlyAnimator.IsSlide = _isSlide;
             }
         }
 
@@ -58,7 +58,8 @@ namespace Mirror.Runtime
         /// </summary>
         void Start()
         {
-            PlayerAnimator.IsMelee = isMelee;
+            PlyAnimator.IsMelee = isMelee;
+
         }
 
         /// <summary>
@@ -75,11 +76,16 @@ namespace Mirror.Runtime
             {
                 IsSlide = InputState.IsSlide;
             }
-            PlayerAnimator.Velocity = Rigidbody2D.velocity.y * (_isFlip ? -1 : 1);
+            PlyAnimator.Velocity = Rigidbody2D.velocity.y * (_isFlip ? -1 : 1);
+
 
             if ( InputState.IsFireDown )
             {
-                PlayerAnimator.Attack();
+                PlyAnimator.IsAttack = true;
+            }
+            else
+            {
+                PlyAnimator.IsAttack = false;
             }
         }
 
@@ -108,7 +114,7 @@ namespace Mirror.Runtime
 
         private void TakeDamage( int damage )
         {
-            Debug.Log( gameObject.name +  " Take damage");
+            // Debug.Log( gameObject.name +  " Take damage");
             OnDamage?.Invoke(damage);
         }
 

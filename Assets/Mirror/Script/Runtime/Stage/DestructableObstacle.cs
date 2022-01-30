@@ -23,11 +23,6 @@ namespace Mirror.Runtime
         // CLASS FUNCTION
         // ########################################
 
-        void UpdateObject( float deltaTime )
-        {
-        
-        }
-
         // ########################################
         // CLASS BUILDIN FUNCTION
         // ########################################
@@ -43,13 +38,15 @@ namespace Mirror.Runtime
         // Update is called once per frame
         void Update()
         {
-        
+            UpdateObject( Time.deltaTime );
         }
 
         public void OnSwordDamage( int damage )
         {
+            Debug.Log ( " call sowrd damage " );
             if ( isSwordVulnerable )
             {
+                Debug.Log( "do damage" );
                 OnDamage( damage );
             }
         }

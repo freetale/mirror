@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3181019956066135794}
   - component: {fileID: 3959975956808386010}
   - component: {fileID: 7386996429072234369}
+  - component: {fileID: 3229447702932891571}
   m_Layer: 12
   m_Name: Spine GameObject (spine)
   m_TagString: Destructable
@@ -136,9 +137,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlip: 0
-  ScrollSpeedMultiplier: 1
-  LeftBound: 0
+  ScrollSpeedMultiplier: 2
+  LeftBound: -12
   Damage: 1
   MaxHealth: 1
   isSwordVulnerable: 0
   isGunVulnerable: 1
+--- !u!61 &3229447702932891571
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936498966094859200}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.061229408, y: 0.5131413}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8314587, y: 0.99908257}
+  m_EdgeRadius: 0

@@ -29,7 +29,7 @@ namespace Mirror.Runtime
             transform.localScale = new Vector3(1, _isFlip ? -1 : 1, 1);
         }
 
-        void UpdateObject( float deltaTime )
+        protected void UpdateObject( float deltaTime )
         {
             
             Scroll( deltaTime );

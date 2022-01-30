@@ -14,6 +14,7 @@ namespace Mirror.Runtime
         private bool isMelee;
         private float velocity;
         private bool isSlide;
+        private bool isAttack;
 
         public bool IsMelee
         {
@@ -45,9 +46,13 @@ namespace Mirror.Runtime
             }
         }
 
-        public void Attack()
+        public bool IsAttack
         {
-            Animator.SetTrigger("Attack");
+            get => isAttack;
+            set
+            {
+                Animator.SetBool("Attack", value);
+            }
         }
 
         public void Initialize()
