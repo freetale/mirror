@@ -23,7 +23,6 @@ namespace Mirror.Runtime
         {
             OnAttack?.Invoke(); //play sound
             OverlapHitbox();
-            PlayerBase.PlayerAnimator.Attack();
         }
 
         private void OverlapHitbox()
@@ -36,6 +35,17 @@ namespace Mirror.Runtime
             for (int i = 0; i < hit; i++)
             {
                 // check if obtracle and deal damage
+                Collider2D collidingObject = colliders[ i ];
+                if ( collidingObject.tag == "Destructable" )
+                {
+                    GameObject obstacleObject = collidingObject.gameObject;
+                    DestructableObstacle obj = obstacleObject.GetComponent< DestructableObstacle >();
+
+                    obj.OnSwordDamage( 1 );
+
+                }
+                    
+
             }
             if (hit > 0)
             {
