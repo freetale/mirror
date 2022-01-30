@@ -137,8 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlip: 0
-  ScrollSpeedMultiplier: 2
-  LeftBound: -12
   Damage: 1
   MaxHealth: 1
   isSwordVulnerable: 0
