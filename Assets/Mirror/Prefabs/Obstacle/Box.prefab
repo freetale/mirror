@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlip: 0
+  ScrollSpeedMultiplier: 1
+  LeftBound: 0
   Damage: 1
 --- !u!61 &4052189837620731772
 BoxCollider2D:
