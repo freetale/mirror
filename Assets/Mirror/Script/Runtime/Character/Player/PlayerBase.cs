@@ -17,9 +17,6 @@ namespace Mirror.Runtime
         [Required] public CapsuleCollider2D SlideCollider2D;
         [Required] public PlayerAnimator PlayerAnimator;
 
-        public GameObject NormalCapsule; //mock
-        public GameObject SlideCapsule; //mock
-
         [Header("Config")]
         public float JumpPower = 1f;
         public float GroundCheckDistance = 0.2f;
@@ -36,8 +33,6 @@ namespace Mirror.Runtime
                 _isSlide = value;
                 NormalCollider2D.enabled = !_isSlide;
                 SlideCollider2D.enabled = _isSlide;
-                NormalCapsule.SetActive(!_isSlide);
-                SlideCapsule.SetActive(_isSlide);
                 PlayerAnimator.IsSlide = _isSlide;
             }
         }

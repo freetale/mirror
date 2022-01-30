@@ -299,8 +299,6 @@ MonoBehaviour:
   NormalCollider2D: {fileID: 4768707748608256240}
   SlideCollider2D: {fileID: 1742028883889708823}
   PlayerAnimator: {fileID: 194217278784486026}
-  NormalCapsule: {fileID: 3721208197129257331}
-  SlideCapsule: {fileID: 6893462695848862195}
   JumpPower: 10
   GroundCheckDistance: 0.02
   GravityScale: 3
