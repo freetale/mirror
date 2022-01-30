@@ -51,6 +51,8 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnExitState()
         {
+            bool isHighScore = StatManager.AppendMile((int)Mile);
+
             MainScene.MeleePlayer.PlayerBase.OnDamage -= Player_OnDamage;
             MainScene.RangePlayer.PlayerBase.OnDamage -= Player_OnDamage;
             MainScene.StopSpawn();

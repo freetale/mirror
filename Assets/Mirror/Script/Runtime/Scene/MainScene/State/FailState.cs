@@ -19,8 +19,13 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void OnEnterState()
         {
+            failScreen.MileTraveled = StatManager.LastMile;
+            failScreen.LongestRun = StatManager.LongestMile;
+            failScreen.MilePasted = StatManager.TotalMile;
+
             failScreen.IsActive = true;
             failScreen.OnRetryClick += FailScreen_OnRetryClick;
+            
         }
 
         private void FailScreen_OnRetryClick()

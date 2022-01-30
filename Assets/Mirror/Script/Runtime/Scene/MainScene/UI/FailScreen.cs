@@ -38,7 +38,7 @@ namespace Mirror.Runtime.Scene.MainScene
             set
             {
                 longestRun = value;
-                LongestRunText.SetText(string.Format(LongestRunFormat, mileTraveled));
+                LongestRunText.SetText(string.Format(LongestRunFormat, longestRun));
             }
         }
 
