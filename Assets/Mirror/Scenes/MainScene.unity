@@ -2041,6 +2041,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeleePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8252923922347487099, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8419480926976814345, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2258,6 +2262,10 @@ PrefabInstance:
     - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564273534608338345, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5170284580281282573, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_Mesh
