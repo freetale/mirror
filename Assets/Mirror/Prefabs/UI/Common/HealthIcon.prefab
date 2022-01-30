@@ -90,5 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 6481931314836740343}
-  FullSprite: {fileID: 21300000, guid: 34ed9279ae71b9e4094105ba0a5f5ee5, type: 3}
-  LostSprite: {fileID: 21300000, guid: a1f7c7b4d6278fa4a87909e307552394, type: 3}
+  FullSprite: {fileID: 21300000, guid: d8e3503b3f80ec84a8641a23fad26eda, type: 3}
+  LostSprite: {fileID: 21300000, guid: 6901e220c20dc674999a5b81255c877f, type: 3}
