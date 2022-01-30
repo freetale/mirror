@@ -1,0 +1,172 @@
+spine.png
+size:828,112
+filter:Linear,Linear
+pma:true
+Arm L Copy
+bounds:547,2,18,43
+offsets:1,0,19,44
+Arm R Copy
+bounds:652,6,18,41
+offsets:1,0,20,41
+Body Copy
+bounds:495,44,40,66
+D Arm L Outfit Copy
+bounds:95,2,21,43
+offsets:0,1,21,45
+rotate:90
+D Arm L Outfit Copy 2
+bounds:630,6,20,41
+offsets:1,0,21,43
+D Face
+bounds:658,61,49,28
+offsets:1,0,50,28
+rotate:90
+D Foot L Outfit  Copy
+bounds:794,27,23,17
+offsets:0,1,24,19
+D Foot R Outfit Copy
+bounds:806,49,23,17
+offsets:1,1,24,19
+rotate:90
+D Hair
+bounds:357,35,75,66
+offsets:1,0,76,66
+rotate:90
+D Hair Back Copy
+bounds:284,29,71,81
+offsets:1,0,73,82
+D Leg L Outfit Copy
+bounds:140,2,21,39
+offsets:1,0,24,42
+rotate:90
+D Leg R Outfit Copy
+bounds:717,25,23,35
+offsets:0,2,23,39
+D Shoulder L  Outfit
+bounds:746,77,18,33
+offsets:2,19,21,53
+D Shoulder R  Outfit  Copy
+bounds:742,27,18,33
+offsets:1,0,20,33
+D Sword Copy
+bounds:321,4,23,127
+offsets:1,0,24,127
+rotate:90
+D Sword Effect Copy
+bounds:155,29,81,127
+rotate:90
+D Thight Outfit Copy
+bounds:702,2,19,32
+offsets:1,1,21,33
+rotate:90
+D Thight Outfit Copy 2
+bounds:762,43,20,32
+offsets:1,1,21,33
+D body Outfit Copy
+bounds:537,47,41,63
+offsets:1,16,42,79
+D eye brow
+bounds:611,49,52,7
+D eye lid
+bounds:224,3,53,24
+Foot L Copy
+bounds:2,2,20,16
+offsets:1,0,22,17
+Foot R Copy
+bounds:764,3,21,15
+offsets:1,2,24,18
+rotate:90
+Head Copy
+bounds:425,36,74,68
+offsets:0,0,75,70
+rotate:90
+LEG L Copy
+bounds:702,23,13,37
+offsets:1,0,14,38
+LEG R Copy
+bounds:718,62,13,33
+offsets:0,1,13,35
+rotate:90
+Shoulder L
+bounds:762,26,15,30
+offsets:1,1,16,31
+rotate:90
+Shoulder R Copy
+bounds:794,96,14,30
+offsets:1,0,15,31
+rotate:90
+T Arm L Outfit Copy
+bounds:766,82,26,28
+offsets:1,1,27,29
+T Arm R  Outfit  Copy
+bounds:718,77,26,33
+T Body Outfit Copy
+bounds:567,3,42,61
+offsets:1,0,44,61
+rotate:90
+T Eye lid Copy
+bounds:580,55,55,29
+rotate:90
+T Face Copy
+bounds:672,10,49,28
+offsets:1,0,50,28
+rotate:90
+T Foot L Outfit Copy
+bounds:784,46,26,20
+rotate:90
+T Foot R Outfit  Copy
+bounds:781,4,27,20
+T GUN
+bounds:688,62,48,28
+rotate:90
+T Gun Shell Ejecting gun
+bounds:512,3,39,14
+offsets:1,0,40,14
+rotate:90
+T Hai
+bounds:2,20,90,66
+rotate:90
+T Hair Back Copy
+bounds:70,25,85,83
+rotate:90
+T Leg L Outfit  Copy
+bounds:24,2,16,14
+offsets:0,2,17,17
+rotate:90
+T Leg R Outfit Copy
+bounds:40,2,16,14
+offsets:0,1,17,16
+rotate:90
+T Shirt Bellow Copy
+bounds:623,60,33,50
+offsets:0,0,34,51
+T Shirt above
+bounds:450,2,32,60
+offsets:1,0,33,60
+rotate:90
+T Shoulder L Outfit
+bounds:279,3,24,40
+offsets:1,0,26,41
+rotate:90
+T Shoulder R Outfit  Copy
+bounds:181,2,25,41
+offsets:0,0,25,42
+rotate:90
+T Thight L Outfit Copy
+bounds:736,2,21,26
+offsets:0,0,22,27
+rotate:90
+T Thight R Outfit Copy
+bounds:794,74,20,27
+offsets:0,0,21,27
+rotate:90
+T eye brow Copy
+bounds:611,58,52,10
+rotate:90
+Thight L Copy
+bounds:528,4,17,38
+offsets:0,1,17,39
+Thight R Copy
+bounds:56,3,15,37
+offsets:0,1,16,39
+rotate:90
