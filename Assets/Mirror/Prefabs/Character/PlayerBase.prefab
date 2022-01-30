@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3316222988747859418}
   - component: {fileID: 1861884590517490539}
   - component: {fileID: 194217278784486026}
+  - component: {fileID: 7267912141443627179}
   m_Layer: 0
   m_Name: SkeletonAnimation
   m_TagString: Untagged
@@ -160,6 +161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 3316222988747859418}
   SkeletonMecanim: {fileID: 1861884590517490539}
+--- !u!114 &7267912141443627179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733058773724634490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c357de006c55a7c42a8f40259e71a34f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeshRenderer: {fileID: 6436482579181632592}
 --- !u!1 &5191904906400108105
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +227,7 @@ MonoBehaviour:
   NormalCollider2D: {fileID: 4768707748608256240}
   SlideCollider2D: {fileID: 1742028883889708823}
   PlayerAnimator: {fileID: 194217278784486026}
+  PlayerShader: {fileID: 7267912141443627179}
   JumpPower: 10
   GroundCheckDistance: 0.02
   GravityScale: 3

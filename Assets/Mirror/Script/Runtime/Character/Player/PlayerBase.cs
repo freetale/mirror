@@ -16,6 +16,7 @@ namespace Mirror.Runtime
         [Required] public CapsuleCollider2D NormalCollider2D;
         [Required] public CapsuleCollider2D SlideCollider2D;
         [Required] public PlayerAnimator PlayerAnimator;
+        [Required] public PlayerShader PlayerShader;
 
         [Header("Config")]
         public float JumpPower = 1f;
