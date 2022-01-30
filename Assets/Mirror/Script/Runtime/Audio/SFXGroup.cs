@@ -7,6 +7,7 @@ namespace Mirror.Runtime
     public class SFXGroup : MonoBehaviour
     {
         public AudioClip Damange;
+        public AudioClip Jump;
         public AudioClip Bonus;
         public AudioClip Attack;
 
@@ -15,6 +16,11 @@ namespace Mirror.Runtime
         public void PlayDamage()
         {
             SFXPool.Play(Damange);
+        }
+
+        public void PlayJump()
+        {
+            SFXPool.Play(Jump);
         }
 
         public void PlayBonus()

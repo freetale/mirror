@@ -53,6 +53,8 @@ namespace Mirror.Runtime
 
         public InputState InputState { get; set; }
 
+        public event Action OnJump;
+
         /// <summary>
         /// Start is called on the frame when a script is enabled just before
         /// any of the Update methods is called the first time.
@@ -93,6 +95,7 @@ namespace Mirror.Runtime
         private void DoJump()
         {
             Rigidbody2D.velocity = new Vector2(0, IsFlip ? -JumpPower : JumpPower);
+            OnJump?.Invoke();
         }
 
         private bool IsGrounded()

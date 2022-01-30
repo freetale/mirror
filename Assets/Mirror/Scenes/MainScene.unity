@@ -1609,6 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damange: {fileID: 8300000, guid: 5875d83236053454d84734695d219967, type: 3}
+  Jump: {fileID: 8300000, guid: 56ba425da5727c448a1888aa5ffc78b3, type: 3}
   Bonus: {fileID: 8300000, guid: 63742904d10853c42bf1a85b1ea54dd7, type: 3}
   Attack: {fileID: 0}
   SFXPool: {fileID: 99937756}

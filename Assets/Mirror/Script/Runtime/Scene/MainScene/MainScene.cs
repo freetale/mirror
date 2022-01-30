@@ -43,6 +43,9 @@ namespace Mirror.Runtime.Scene.MainScene
         public IState CurrentState { get; set; }
 
         public event Action<float> OnSetLevelSpeed;
+
+        private bool jumpSoundGaurd { get; set; }
+
         public void Start()
         {
             MainSceneUI.Initialize();
@@ -55,11 +58,23 @@ namespace Mirror.Runtime.Scene.MainScene
             RangePlayer.PlayerBase.InputState = state;
 
             SubscribeEnvironmentToEvent();
+
+            MeleePlayer.PlayerBase.OnJump += PlayerBase_OnJump;
+            RangePlayer.PlayerBase.OnJump += PlayerBase_OnJump;
+        }
+
+        private void PlayerBase_OnJump()
+        {
+            if (!jumpSoundGaurd)
+            {
+                SFXGroup.PlayJump();
+                jumpSoundGaurd = true;
+            }
         }
 
         private void SubscribeEnvironmentToEvent()
         {
-            foreach ( GameObject obj in environment )
+            foreach (GameObject obj in environment)
             {
                 SkyScroller scroller = obj.GetComponent<SkyScroller>();
                 scroller.SetScrollSpeed(LevelSpeed);
@@ -92,6 +107,7 @@ namespace Mirror.Runtime.Scene.MainScene
                 SwapPlayer();
             }
             CurrentState.Update(Time.deltaTime);
+            jumpSoundGaurd = false;
         }
 
         private void FixedUpdate()
@@ -138,7 +154,7 @@ namespace Mirror.Runtime.Scene.MainScene
 
         public void UpdateLevelSpeed()
         {
-            OnSetLevelSpeed?.Invoke( _LevelSpeed );
+            OnSetLevelSpeed?.Invoke(_LevelSpeed);
         }
 
 #if UNITY_EDITOR
@@ -150,10 +166,10 @@ namespace Mirror.Runtime.Scene.MainScene
         void OnValidate()
         {
             // OnSetLevelSpeed?.Invoke( _LevelSpeed );
-            foreach ( GameObject obj in environment )
+            foreach (GameObject obj in environment)
             {
                 SkyScroller scroller = obj.GetComponent<SkyScroller>();
-                scroller.SetScrollSpeed( _LevelSpeed ) ;
+                scroller.SetScrollSpeed(_LevelSpeed);
             }
         }
 #endif
