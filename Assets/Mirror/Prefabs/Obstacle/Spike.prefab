@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isFlip: 1
+  ScrollSpeedMultiplier: 1
+  LeftBound: 0
   Damage: 1

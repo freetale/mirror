@@ -38,7 +38,7 @@ namespace Mirror.Runtime
         // Update is called once per frame
         void Update()
         {
-            UpdateObject( Time.deltaTime );
+            
         }
 
         public void OnSwordDamage( int damage )
