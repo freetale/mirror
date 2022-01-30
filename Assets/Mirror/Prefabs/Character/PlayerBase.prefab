@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9131575021429625832}
   - component: {fileID: 3316222988747859418}
   - component: {fileID: 1861884590517490539}
+  - component: {fileID: 194217278784486026}
   m_Layer: 0
   m_Name: SkeletonAnimation
   m_TagString: Untagged
@@ -145,6 +146,20 @@ MonoBehaviour:
     useCustomMixMode: 1
     layerMixModes: 01000000
     layerBlendModes: 01000000
+--- !u!114 &194217278784486026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733058773724634490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe6e4c6b5920ad4583857827e707896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 3316222988747859418}
+  SkeletonMecanim: {fileID: 1861884590517490539}
 --- !u!1 &3721208197129257331
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,6 +298,7 @@ MonoBehaviour:
   Rigidbody2D: {fileID: 8029049629024044850}
   NormalCollider2D: {fileID: 4768707748608256240}
   SlideCollider2D: {fileID: 1742028883889708823}
+  PlayerAnimator: {fileID: 194217278784486026}
   NormalCapsule: {fileID: 3721208197129257331}
   SlideCapsule: {fileID: 6893462695848862195}
   JumpPower: 10

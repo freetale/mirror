@@ -12,9 +12,10 @@ namespace Mirror.Runtime
     public class PlayerBase : AbstractFlipable
     {
         [Header("Component")]
-        [Required]  public Rigidbody2D Rigidbody2D;
+        [Required] public Rigidbody2D Rigidbody2D;
         [Required] public CapsuleCollider2D NormalCollider2D;
         [Required] public CapsuleCollider2D SlideCollider2D;
+        [Required] public PlayerAnimator PlayerAnimator;
 
         public GameObject NormalCapsule; //mock
         public GameObject SlideCapsule; //mock
@@ -37,6 +38,7 @@ namespace Mirror.Runtime
                 SlideCollider2D.enabled = _isSlide;
                 NormalCapsule.SetActive(!_isSlide);
                 SlideCapsule.SetActive(_isSlide);
+                PlayerAnimator.IsSlide = _isSlide;
             }
         }
 
@@ -68,6 +70,7 @@ namespace Mirror.Runtime
             {
                 IsSlide = InputState.IsSlide;
             }
+            PlayerAnimator.Velocity = Rigidbody2D.velocity.y * (_isFlip ? -1 : 1);
         }
 
         private void DoJump()

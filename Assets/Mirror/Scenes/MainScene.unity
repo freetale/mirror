@@ -1600,17 +1600,6 @@ MonoBehaviour:
   GameplayScreen: {fileID: 2765127913665983990}
   FailScreen: {fileID: 8927368953671399702}
   ContinueScreen: {fileID: 403007247}
---- !u!114 &1593475465 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1593475465, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
-  m_PrefabInstance: {fileID: 878652234576330000}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd56372b696f3f49bd0477f8150a461, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1609312046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,7 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputController: {fileID: 1609312047}
-  MeleePlayer: {fileID: 1593475465}
+  MeleePlayer: {fileID: 2081409059}
   RangePlayer: {fileID: 1064834862}
   MainSceneUI: {fileID: 1506691649}
   SFXPool: {fileID: 99937756}
@@ -1965,6 +1954,17 @@ PrefabInstance:
       objectReference: {fileID: 805524534}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eafe7e472bbd634c8907c1aa3974b76, type: 3}
+--- !u!114 &2081409059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1593475465, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+  m_PrefabInstance: {fileID: 878652234576330000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd56372b696f3f49bd0477f8150a461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &225333353079435703
 PrefabInstance:
   m_ObjectHideFlags: 0

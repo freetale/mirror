@@ -23,6 +23,7 @@ namespace Mirror.Runtime
         {
             OnAttack?.Invoke(); //play sound
             OverlapHitbox();
+            PlayerBase.PlayerAnimator.Attack();
         }
 
         private void OverlapHitbox()
