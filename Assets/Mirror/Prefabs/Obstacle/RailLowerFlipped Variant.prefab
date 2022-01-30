@@ -73,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7884804989469891100, guid: 0f5d5d53a81e12947a7c9f2fb7ca5cd4, type: 3}
       propertyPath: m_Name
-      value: RailLowerFlipped Variant (1)
+      value: RailLowerFlipped Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f5d5d53a81e12947a7c9f2fb7ca5cd4, type: 3}
