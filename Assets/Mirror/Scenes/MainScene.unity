@@ -1591,6 +1591,8 @@ MonoBehaviour:
   - {fileID: 7372375298569723731, guid: b5a715da5f21c214e8bc66f1b3c89306, type: 3}
   - {fileID: 7884804989469891100, guid: 0f5d5d53a81e12947a7c9f2fb7ca5cd4, type: 3}
   - {fileID: 4906714583385092284, guid: b7973d9fd82c9184b996442e46c45e8a, type: 3}
+  - {fileID: 7839740170211943818, guid: d9bb1d438c627f9409b479c3afd3a5a6, type: 3}
+  - {fileID: 7224001269938553085, guid: 49144d65035675242b862c7e794302d8, type: 3}
   pools: []
   Scene: {fileID: 1609312049}
   SpawnDistance: 0.8

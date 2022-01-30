@@ -56,8 +56,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6752273847926441576, guid: aa8327066212a3345bd3bf377bed4273, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752273847926441576, guid: aa8327066212a3345bd3bf377bed4273, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6752273847926441581, guid: aa8327066212a3345bd3bf377bed4273, type: 3}
+      propertyPath: _isFlip
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa8327066212a3345bd3bf377bed4273, type: 3}
