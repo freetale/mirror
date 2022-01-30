@@ -1589,6 +1589,7 @@ MonoBehaviour:
   - {fileID: 7372375298569723731, guid: b5a715da5f21c214e8bc66f1b3c89306, type: 3}
   pools: []
   Scene: {fileID: 1609312049}
+  SpawnDistance: 1
 --- !u!1 &1748030436
 GameObject:
   m_ObjectHideFlags: 0
