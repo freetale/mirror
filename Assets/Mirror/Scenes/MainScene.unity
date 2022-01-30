@@ -2048,9 +2048,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1085669810121215274, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: _isFlip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085669810121215274, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: isMelee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1578273790808125432, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: initialSkinName
+      value: DOWN CHARA
+      objectReference: {fileID: 0}
     - target: {fileID: 4917019899922674394, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_Name
       value: MeleePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7160006062081915809, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: m_GravityScale
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8252923922347487099, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_Mesh
@@ -2062,7 +2078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553782584935560505, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553782584935560505, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
+      propertyPath: m_LocalScale.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8553782584935560505, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2070,7 +2090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553782584935560505, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8553782584935560505, guid: c396a75f9dd8a064bbc69fcd43c39f79, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2238,9 +2258,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3351447335264237939, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2248,7 +2276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4281493866836801515, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2286,9 +2314,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4814025830029561848, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
+      propertyPath: _isFlip
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5170284580281282573, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6357094390388682026, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
+      propertyPath: initialSkinName
+      value: UP CHARA
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e42dc32598c965645bf011fade27f2fc, type: 3}
