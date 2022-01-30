@@ -32,8 +32,7 @@ namespace Mirror.Runtime
         void UpdateObject( float deltaTime )
         {
             
-             // move object
-            transform.Translate( - ScrollSpeed * ScrollSpeedMultiplier * deltaTime, 0, 0) ;
+            Scroll( deltaTime );
 
             // reset position if out of screen
             if ( transform.position.x < LeftBound )
@@ -41,6 +40,12 @@ namespace Mirror.Runtime
                 gameObject.SetActive( false );
             }
 
+        }
+
+        void Scroll( float deltaTime )
+        {
+            // move object
+            transform.Translate( - ScrollSpeed * ScrollSpeedMultiplier * deltaTime, 0, 0) ;
         }
 
         // event set scrollspeed subscriber
